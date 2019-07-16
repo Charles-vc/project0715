@@ -13,7 +13,9 @@ public interface StudentMapper {
     int updateStudent(Student student);
     //增加周报
     int addWeekly(Weekly weekly);
-    //删除周报
+
+    //删除周报,先查询是否已打分
+    int getScorebByWid(int wid);
     int delWeekly(int wid);
     //查询自己周报
     List<Weekly> getWeeklyListBySid(int sid);
