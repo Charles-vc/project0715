@@ -68,7 +68,7 @@ public class StudentServiceImpl implements StudentService {
             map.put("head",teacherMapper.getHeaderBySid(sid).getTname());
             map.put("boss","laowang");
             map.put("day",sleave.getDate());
-            runtimeService.startProcessInstanceByKey("leave1",lid+"",map);
+            runtimeService.startProcessInstanceByKey("leave",lid+"",map);
             String taskId = taskService.createTaskQuery().taskAssignee(teacherMapper.getHeaderBySid(sid).getTname()).singleResult().getId();
             taskService.complete(taskId);
 
