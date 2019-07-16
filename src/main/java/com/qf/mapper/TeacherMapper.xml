@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.TeacherMapper">
+
+    <select id="getWeeklyListBySid" resultType="weekly">
+        select w.* from teacher t,class c,student s,weekly w where t.tid=#{tid}
+        and t.cid=c.cid and c.cid=s.cid and s.sid=w.sid
+    </select>
+
+    <update id="updateWeeklyByTid" >
+        update weekly set score=#{score}
+
+    </update>
+
+    <select id="getStudentByTid" resultType="Student" >
+        select s.* from teacher t,class c,student s where t.tid=#{tid}
+        and t.cid=c.cid and c.cid=s.cid
+
+    </select>
+
+    <insert id="addTleave" parameterType="tleave" >
+                insert into tleave(tid,startdate,enddate,reason,state) values(#{sid},#{date},#{startdate},#{enddate},#{reason},#{state})
+
+    </insert>
+
+    <select id="getSleaveListByTid" resultType="sleave" >
+        select s.* from sleave sl,teacher t,StudentClass sc,student s
+        where t.tid=#{tid} and t.cid=c.cid and c.cid=s.cid
+        and s.sid=sl.sid
+
+
+    </select>
+
+    <update id="updateLeave" >
+        update sleave set state=#{state} where lid=#{lid}
+
+    </update>
+</mapper>
