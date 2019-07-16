@@ -4,7 +4,7 @@ public class Weekly {
     private int wid;
     private int sid;
     private String title;
-    private int time;
+    private int wtime;
     private String context;
     private int score;
 
@@ -12,7 +12,7 @@ public class Weekly {
         this.wid = wid;
         this.sid = sid;
         this.title = title;
-        this.time = time;
+        this.wtime = wtime;
         this.context = context;
         this.score = score;
     }
@@ -26,7 +26,7 @@ public class Weekly {
                 "wid=" + wid +
                 ", sid=" + sid +
                 ", title='" + title + '\'' +
-                ", time=" + time +
+                ", time=" + wtime +
                 ", context='" + context + '\'' +
                 ", score=" + score +
                 '}';
@@ -57,11 +57,11 @@ public class Weekly {
     }
 
     public int getTime() {
-        return time;
+        return wtime;
     }
 
     public void setTime(int time) {
-        this.time = time;
+        this.wtime = time;
     }
 
     public String getContext() {
