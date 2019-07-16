@@ -66,7 +66,7 @@
 
         <dl class="custom">
             <dt onClick="changeImage()">班级管理<img src="${path }/images/left/select_xl01.png" /></dt>
-            <dd><a href="../classes" target="right" id="3" class="handle-view">&emsp;班级管理&emsp;&emsp;&emsp;</a></dd>
+            <dd><a href="/kk" target="right" id="3" class="handle-view">&emsp;班级管理&emsp;&emsp;&emsp;</a></dd>
             <dd><a href="${path }/preStudentCount" target="right" id="11" class="handle-view">&emsp;各班级总人数&emsp;&emsp;&emsp;</a></dd>
         </dl>
 
@@ -128,25 +128,8 @@
             //判断当前点击操作是否已经存在
             var headDivs = $(headDoc).children();
             var flag = true;
-            for(var i=0; i<headDivs.length; i++) {
-                var div = headDivs[i];
-                $(div).css("background-color", "#FFF");
-                $(div).attr("show", "f");
-                var divId = $(div).attr("id").substring(2);
-                //当前操作已经存在
-                if(nowId == divId) {
-                    $(div).css("background-color", "#CAE5E8");
-                    $(div).attr("show", "t");
-                    flag = false;
-                }
-            }
             //向头部div中添加模块
-            if(flag) {
-                if(headDivs.length >= 11) {
-                    $(headDoc).children().first().remove();
-                }
-                $(headDoc).append("<div show='t' class='index_title' id='it"+nowId+"' style='float: left;background-color: #CAE5E8;'><a href="+$(this).attr('href')+" target='right' style='color: #707070;margin-left:5px;' onclick='changeShow("+$(this).attr('id')+")'>"+$(this).text().trim()+"</a>&emsp;<sup onclick='removeParent("+$(this).attr('id')+")'>×</sup></div>");
-            }
+
         });
 
         $(".leftsidebar_box dd").hide();

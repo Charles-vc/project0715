@@ -23,7 +23,7 @@
             <th>分数</th>
             <th>操作</th>
         </tr>
-        <c:forEach items="SingleStudentWeeklyList" var="weekly" varStatus="i" >
+        <c:forEach items="$(SingleStudentWeeklyList)" var="weekly" varStatus="i" >
             <tr id="tr${weekly.wid}">
                 <td>${i.count}</td>
                 <td>${weekly.title}</td>
