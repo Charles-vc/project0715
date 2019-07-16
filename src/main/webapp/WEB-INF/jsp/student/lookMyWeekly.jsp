@@ -32,21 +32,7 @@
                 <c:if test="${not empty weekly.score}"> <td>${weekly.score}</td></c:if>
             </tr>
         </c:forEach>
-
-
-
     </table>
-
-
-
-
-
-        标题：<input type="text"  name="title">
-        内容：<input type="text" name="context">
-        <p></p>
-        <span></span>
-        <a href="/提交周报"><button>确认提交周报！</button></a>
-
 </div>
 </body>
 </html>
