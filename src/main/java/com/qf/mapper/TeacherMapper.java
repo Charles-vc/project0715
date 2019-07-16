@@ -1,9 +1,6 @@
 package com.qf.mapper;
 
-import com.qf.pojo.Sleave;
-import com.qf.pojo.Student;
-import com.qf.pojo.Tleave;
-import com.qf.pojo.Weekly;
+import com.qf.pojo.*;
 import org.springframework.stereotype.Repository;
 
 
@@ -23,5 +20,7 @@ public interface TeacherMapper {
     int updateLeave(int lid);
     //老师请假
     int addTleave(Tleave tleave);
-
+    //sid得到班主任和讲师
+    Teacher getHeaderBySid(int sid);
+    Teacher getTeacherBySid(int sid);
 }
