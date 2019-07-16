@@ -3,9 +3,10 @@ package com.qf.service;
 import com.qf.pojo.Sleave;
 import com.qf.pojo.Student;
 import com.qf.pojo.Weekly;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public interface StudentService {
     //通过id查询整个学生信息
     Student getStudentBySid(int sid);
