@@ -38,4 +38,14 @@
         update sleave set state=#{state} where lid=#{lid}
 
     </update>
+
+    <select id="getHeaderBySid" resultType="teacher" >
+        select t.* from teacher t,class c,student s where s.sid=#{sid}
+        and s.cid=c.cid and c.cid=t.cid and t.status=2
+    </select>
+
+    <select id="getTeacherBySid" resultType="teacher" >
+        select t.* from teacher t,class c,student s where s.sid=#{sid}
+        and s.cid=c.cid and c.cid=t.cid and t.status=1
+    </select>
 </mapper>
