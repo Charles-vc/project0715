@@ -19,7 +19,7 @@ public interface StudentService {
     //查询自己周报
     List<Weekly> getWeeklyListBySid(int sid);
     //添加请假
-    int addLeave(Sleave sleave);
+    int addLeave(Sleave sleave,int sid);
     //查看请假
     List<Sleave> getSleaveListBySid(int sid);
 }
