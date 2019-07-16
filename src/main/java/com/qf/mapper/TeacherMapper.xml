@@ -20,6 +20,7 @@
 
     </select>
 
+
     <insert id="addTleave" parameterType="tleave" >
                 insert into tleave(tid,startdate,enddate,reason,state) values(#{sid},#{date},#{startdate},#{enddate},#{reason},#{state})
 

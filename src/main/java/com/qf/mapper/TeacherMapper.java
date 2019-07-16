@@ -6,6 +6,7 @@ import com.qf.pojo.Tleave;
 import com.qf.pojo.Weekly;
 import org.springframework.stereotype.Repository;
 
+
 import java.util.List;
 @Repository
 public interface TeacherMapper {
