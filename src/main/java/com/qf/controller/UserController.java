@@ -11,6 +11,12 @@ public class UserController {
 
         return "login";
     }
+    @RequestMapping("Home")
+    public String test5(){
+
+        return "Home";
+    }
+
 
 
     @RequestMapping("/unauthorize")
