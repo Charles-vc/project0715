@@ -3,9 +3,11 @@ package com.qf.mapper;
 import com.qf.pojo.Sleave;
 import com.qf.pojo.Student;
 import com.qf.pojo.Weekly;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Component
 public interface StudentMapper {
     //通过id查询整个学生信息
     Student getStudentBySid(int sid);
@@ -16,6 +18,7 @@ public interface StudentMapper {
 
     //删除周报,先查询是否已打分
     int getScorebByWid(int wid);
+
     int delWeekly(int wid);
     //查询自己周报
     List<Weekly> getWeeklyListBySid(int sid);

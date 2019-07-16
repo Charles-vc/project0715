@@ -4,9 +4,10 @@ import com.qf.pojo.Sleave;
 import com.qf.pojo.Student;
 import com.qf.pojo.Tleave;
 import com.qf.pojo.Weekly;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface TeacherMapper {
     //通过关联teacher，class，student，weekly查询到周报
     //查询本班学生考试周报成绩
