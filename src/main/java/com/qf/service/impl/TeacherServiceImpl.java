@@ -67,7 +67,7 @@ public class TeacherServiceImpl implements TeacherService {
         Map<String,Object> map = new HashMap<String,Object>();
         map.put("teacher",teacherMapper.getHeaderBySid(sid).getTname());
         map.put("boss","laowang");
-        runtimeService.startProcessInstanceByKey("leave1",lid+"",map);
+        runtimeService.startProcessInstanceByKey("leave",lid+"",map);
         String taskId = taskService.createTaskQuery().taskAssignee(teacherMapper.getHeaderBySid(sid).getTname()).singleResult().getId();
         taskService.complete(taskId);
 
