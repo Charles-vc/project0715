@@ -21,7 +21,7 @@ public class UserController {
 
     @RequestMapping("/first")
     public String test(){
-        return "login";
+        return "login1";
     }
     @RequestMapping("Home")
     public String home(){
@@ -39,7 +39,7 @@ public class UserController {
             if(subject.isAuthenticated()){
                 int uid = userService.getUid(user.getUname());
                 session.setAttribute("uid",uid);
-                return "Home";
+                return "index";
             }
         }catch (SecurityException e){
             System.out.println("登录失败");
@@ -53,9 +53,14 @@ public class UserController {
 
         return "unauthorize";
     }
-    @RequestMapping("/test2")
+    @RequestMapping("/kk")
     public String test3(){
 
-        return "success";
+        return "kk";
     }
+    @RequestMapping("home")
+    public String home1(){
+        return  "Home";
+    }
+
 }

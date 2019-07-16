@@ -4,8 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean class="org.apache.shiro.spring.web.ShiroFilterFactoryBean" id="shiroFilter" >
-        <property name="loginUrl" value="/Home" />
-        <property name="successUrl" value="/test2" />
+        <property name="loginUrl" value="/first" />
+        <property name="successUrl" value="/index" />
         <property name="unauthorizedUrl" value="/unauthorize" />
         <property name="securityManager"   ref="securityManager" />
 <!--        配置过滤器链 不同的验证使用不同的过滤器，由工厂bean创建-->
