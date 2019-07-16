@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean class="org.apache.shiro.spring.web.ShiroFilterFactoryBean" id="shiroFilter" >
-        <property name="loginUrl" value="/f" />
+        <property name="loginUrl" value="/Home" />
         <property name="successUrl" value="/test2" />
         <property name="unauthorizedUrl" value="/unauthorize" />
         <property name="securityManager"   ref="securityManager" />
