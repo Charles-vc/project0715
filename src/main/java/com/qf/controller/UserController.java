@@ -21,7 +21,7 @@ public class UserController {
 
     @RequestMapping("/first")
     public String test(){
-        return "login1";
+        return "login";
     }
     @RequestMapping("Home")
     public String home(){
@@ -29,9 +29,8 @@ public class UserController {
     }
     @RequestMapping("login")
     public String login(User user, HttpSession session){
-        System.out.println(user.getUname());
-        System.out.println(user.getPassword());
         SecurityUtils.setSecurityManager(securityManager);
+        session.setAttribute("user",user);
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(user.getUname(),user.getPassword());
         try{
@@ -62,5 +61,12 @@ public class UserController {
     public String home1(){
         return  "Home";
     }
+    @RequestMapping("updatePassword")
+    public String updatePassword(String password,HttpSession session){
+        int uid = (int) session.getAttribute("uid");
+        userService.updatePassword(uid,password);
+        return "restart";
+    }
+
 
 }
